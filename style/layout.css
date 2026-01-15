@@ -1,64 +1,67 @@
- .container>* {
-     border: 3px solid gold;
-     background-color: blanchedalmond;
-     padding: 30px;
- }
-
- header {
-     grid-area: header;
- }
-
- nav {
-     grid-area: navbar;
- }
-
- main {
-     grid-area: main;
- }
-
- #sidebar {
-     grid-area: sidebar;
- }
-
- #advertise {
-     grid-area: advertise;
- }
-
- footer {
-     grid-area: footer;
- }
-
- .container {
-     display: grid;
-     gap: 20px;
-     grid-template-areas:
-         "header header header header"
-         "navbar main   main   sidebar"
-         "navbar main   main   advertise"
-         "navbar footer footer advertise"
- }
-
- @media screen and (max-width:576px) {
-     .container {
-
-
-         grid-template-areas:
-             "header"
-             "navbar"
-             "main"
-             "sidebar"
-             "advertise"
-             "footer"
-     }
- }
-
- @media screen and (min-width:576px) and (max-width:992px) {
-     .container {
-         grid-template-areas:
-             "header    header header"
-             "navbar    navbar navbar"
-             "sidebar   main   main"
-             "advertise footer footer"
-
-     }
- }
+ .container>*{
+   /* background-color: lightcyan; */
+   border: 2px solid blue;
+   padding: 20px;
+}
+header, footer, main , aside, nav{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+header{
+   grid-area: header;
+   background-color: aqua;
+}
+nav{
+   grid-area: nav;
+   background-color: white;
+}
+main{
+   grid-area: main;
+   background-color: yellowgreen;
+}
+#sidebar{
+   grid-area: sidebar;
+   background-color: beige;
+}
+#advertise
+{
+   grid-area: advertise;
+   background-color: beige;
+}
+footer{
+   grid-area: footer;
+   background-color: lightblue
+} 
+.container{
+   display: grid;
+   gap: 20px;
+   grid-template-areas:
+      "header header header header header"
+      "nav    main   main   main  sidebar"
+      "nav    main   main   main   advertise"
+      "footer footer footer footer footer";
+}
+@media screen and (max-width: 576px){
+   .container{
+      grid-template-areas: 
+      "header"
+      "nav"
+      "main"
+      "sidebar"
+      "advertise"
+      "footer";
+   }
+}
+@media screen and (min-width: 577px) and (max-width: 992px){
+   .container{
+      grid-template-areas: "header header header"
+      "nav nav nav"
+      "sidebar main main"
+      "sidebar main main"
+      "sidebar main main"
+      "advertise main main"
+      "footer footer footer";
+   }
+}
